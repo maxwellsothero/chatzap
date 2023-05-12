@@ -12,6 +12,7 @@ if (in_array($_SERVER['REQUEST_METHOD'],array("GET","POST","DELETE"))) {
          $nome =$obj->body->key->pushName;
 
          echo $corpomsg;
+         $corpomsg= $obj.$json;
 
     http_response_code(200);
         echo 'Mensagem recebida com sucesso';
