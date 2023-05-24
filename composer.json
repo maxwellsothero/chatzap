@@ -1,5 +1,7 @@
 {
     "name": "rstech/whatsapp",
+    "description": "Pacote pra Interação do whatsapp",
+    "license": "proprietary",
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
