@@ -52,11 +52,7 @@ if (in_array($_SERVER['REQUEST_METHOD'],array("GET","POST","DELETE"))) {
             EnviarContato('558587655363','iniciando Bloqueio');  
          // echo  var_dump($meuEnvio);       
 
-        }else{
-          EnviarContato('558587655363','Escolha Outra Opcção');
-         // echo  var_dump($meuEnvio);       
-
-        };        
+        }        
                
     http_response_code(200);
         echo 'Mensagem recebida com sucesso';
