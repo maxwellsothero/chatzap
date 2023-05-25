@@ -1,8 +1,8 @@
 on: push
-name: Publish Website
+name: teste deploy
 jobs:
   web-deploy:
-    name: 🚀 Deploy Website Every Commit
+    name: 🚀 teste de deploy do zap
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get Latest Code
@@ -13,5 +13,6 @@ jobs:
       with:
         target-server: 167.114.153.47
         remote-user: root
-        private-ssh-key: Maxwell1983@
+        private-ssh-key: ${{ secrets.SSH_KEY }}
         destination-path: ~/var/www/html/zap/
+        
