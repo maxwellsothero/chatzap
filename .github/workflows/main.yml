@@ -13,6 +13,5 @@ jobs:
       with:
         target-server: 167.114.153.47
         remote-user: root
-        private-ssh-key: ${{ secrets.SSH_KEY }}
+        private-ssh-key: ${{ secrets.ssh_key }}
         destination-path: ~/var/www/html/zap/
-        
