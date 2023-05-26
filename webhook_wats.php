@@ -38,7 +38,7 @@ if (in_array($_SERVER['REQUEST_METHOD'],array("GET","POST","DELETE"))) {
     $corpo = explode('@',$obj->body->key->remoteJid);
     $meuEnvio = $obj->body->key->fromMe;
     $nome = $obj->body->verifiedBizName;
-   // $texto = $obj->body->message->extendedTextMessage->text;
+    $texto = strtolower($obj->body->message->extendedTextMessage->text);
     $texto1 = strtolower($obj->body->message->conversation);
 
         //echo $meuEnvio."<br>";
@@ -47,11 +47,12 @@ if (in_array($_SERVER['REQUEST_METHOD'],array("GET","POST","DELETE"))) {
      //   echo $texto."<br>";
         echo "Mensagem:  ".strtolower($texto1)."<br>";
 
-
-        if($texto1 =='start' ){
-            EnviarContato('558587655363','iniciando Bloqueio');  
-         // echo  var_dump($meuEnvio);       
-
+        if($tipo == 'message'){
+            if($texto1 =='start' || $texto =='start' ){
+                EnviarContato('558587655363','iniciando Bloqueio');  
+             // echo  var_dump($meuEnvio);       
+    
+            }        
         }        
                
     http_response_code(200);
