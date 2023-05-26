@@ -1,4 +1,4 @@
-name: App Workflow
+name: zap php
 
 on:
   push:
@@ -24,7 +24,7 @@ jobs:
         private-ssh-key: ${{ secrets.SSH_KEY }}
         destination-path: ~/var/www/html/zap/
       
-      
+
 
 
 
