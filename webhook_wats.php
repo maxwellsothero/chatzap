@@ -41,10 +41,9 @@ if (in_array($_SERVER['REQUEST_METHOD'],array("GET","POST","DELETE"))) {
         $texto1 = strtolower($obj->body->message->conversation);
             
         if($tipo == 'message'){
-            if($texto1 =='start' || $texto =='start' ){
-                EnviarContato($corpo[0],'iniciando Bloqueio');  
-             // echo  var_dump($meuEnvio);       
-    
+            if($texto1 =='iniciar' || $texto =='iniciar' ){
+                EnviarContato($corpo[0],'Qual Operação Deseja Realiza: Bloqueio( Digite 0),Desbloqueio (Digite 1).');  
+             // echo  var_dump($meuEnvio);      
             }        
         }        
                
