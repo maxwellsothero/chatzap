@@ -31,25 +31,18 @@ if (in_array($_SERVER['REQUEST_METHOD'],array("GET","POST","DELETE"))) {
     // Recupera o corpo da requisição POST
     $json = file_get_contents('php://input');
 
-      
     $obj =json_decode($json);
 
-    $tipo  = $obj->type;
-    $corpo = explode('@',$obj->body->key->remoteJid);
-    $meuEnvio = $obj->body->key->fromMe;
-    $nome = $obj->body->verifiedBizName;
-    $texto = strtolower($obj->body->message->extendedTextMessage->text);
-    $texto1 = strtolower($obj->body->message->conversation);
-
-        //echo $meuEnvio."<br>";
-        echo $corpo[0]."<br>";
-        echo "Nome:  ".$nome."<br>";
-     //   echo $texto."<br>";
-        echo "Mensagem:  ".strtolower($texto1)."<br>";
-
+        $tipo  = $obj->type;
+        $corpo = explode('@',$obj->body->key->remoteJid);
+        $meuEnvio = $obj->body->key->fromMe;
+        $nome = $obj->body->verifiedBizName;
+        $texto = strtolower($obj->body->message->extendedTextMessage->text);
+        $texto1 = strtolower($obj->body->message->conversation);
+            
         if($tipo == 'message'){
             if($texto1 =='start' || $texto =='start' ){
-                EnviarContato('558587655363','iniciando Bloqueio');  
+                EnviarContato($corpo[0],'iniciando Bloqueio');  
              // echo  var_dump($meuEnvio);       
     
             }        
