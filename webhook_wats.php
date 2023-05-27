@@ -1,4 +1,5 @@
 <?php
+require_once("smsenvia.php");
 
 function enviarContato($linha,$msg){
   $curl = curl_init();
@@ -21,6 +22,7 @@ CURLOPT_HTTPHEADER => array(
 $response = curl_exec($curl);
 
 curl_close($curl);
+
 echo $response;     
 };
 
@@ -44,8 +46,10 @@ if (in_array($_SERVER['REQUEST_METHOD'],array("GET","POST","DELETE"))) {
                 if($texto1 =='iniciar' || $texto =='iniciar' ){
                     enviarContato($corpo[0],'Qual Operação Deseja Realiza: Bloqueio( Digite 0),Desbloqueio (Digite 1).');
                                 }elseif($texto1 == 0 || $texto == 'bloqueio' ){
+                                    bloqueio();
                                             enviarContato($corpo[0],'COMANDO DE BLOQUEIO ENVIADO');                      
                                     }elseif($texto1 == 'desbloqueio' || $texto == 'desbloqueio' ){
+                                        desbloqueio();
                                         enviarContato($corpo[0],'COMANDO DE DESBLOQUEIO ENVIADO');  
                                          }else{                                              
                                             enviarContato($corpo[0],'COMANDO DE desconhecido');        
