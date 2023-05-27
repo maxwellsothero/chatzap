@@ -15,7 +15,7 @@ CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
 CURLOPT_CUSTOMREQUEST => 'POST',
 CURLOPT_POSTFIELDS =>'{
 "sendSmsRequest": {
-  "to": "5585987655363",
+  "to": "5585989048253",
     "message": "ST300CMD;SERIAL;02;Enable1"}}',
 CURLOPT_HTTPHEADER => array(
 'Content-Type: application/json',
