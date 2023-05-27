@@ -45,14 +45,15 @@ if (in_array($_SERVER['REQUEST_METHOD'],array("GET","POST","DELETE"))) {
         if($tipo == 'message'){
                 if($texto1 =='iniciar' || $texto =='iniciar' ){
                     enviarContato($corpo[0],'Qual Operação Deseja Realiza: Bloqueio( Digite 0),Desbloqueio (Digite 1).');
-                                }elseif($texto1 == 0 || $texto == 'bloqueio' ){
+                                }elseif($texto1 == 0 || $texto == 0 ){
                                     bloqueio();
                                             enviarContato($corpo[0],'COMANDO DE BLOQUEIO ENVIADO');                      
-                                    }elseif($texto1 == 'desbloqueio' || $texto == 'desbloqueio' ){
+                                    }elseif($texto1 == 1 || $texto == 1 ){
                                         desbloqueio();
                                         enviarContato($corpo[0],'COMANDO DE DESBLOQUEIO ENVIADO');  
-                                         }else{                                              
-                                            enviarContato($corpo[0],'COMANDO DE desconhecido');        
+                                         }else{  
+
+                                            enviarContato($corpo[0],'Por Favor Digite Iniciar e escolha o Comando Desejado');        
                                             }
                                         }   
                                 }      
